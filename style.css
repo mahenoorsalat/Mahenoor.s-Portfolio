@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: black;
+    color: white;
+}
+#mini-circle{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    z-index: 99999;
+    border-radius: 50%;
+    background: #fff;
+}
+#main {
+    width: 100%;
+}
+
+#hero {
+    -webkit-text-stroke-width: 100%;
+    height: 100vh;
+    background: #000;
+}
+
+#nav {
+    display: flex;
+    color: white;
+    width: 100%;
+    padding: 41px 40px 0px 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#heading {
+    margin-top: 67px;
+    color: white;
+}
+
+.fitcontent h1 {
+    margin-left: 230px;
+}
+
+#heading h1 {
+    line-height: 0.9;
+    opacity: .6;
+    font-size: 10vw;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#heading>h1 {
+    margin-left: 30px;
+}
+
+.fitcontent {
+    width: fit-content;
+}
+
+.fitcontent p{
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+#head{
+    justify-content: end;
+    color: white;
+    font-weight: 300;
+    margin-top: 100px;
+    margin-right: 21px;
+    font-size: 1.5vw;
+    font-style: normal;
+    text-align: right;
+}
+
+#heroFooter {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 33px 25px 25px 25px;
+    font-weight: 200;
+    font-size: 21px;
+    background: black;
+
+}
+
+
+#heroFooter p i {
+    background-color: gray;
+    border-radius: 50%;
+    padding: 6px;
+    color: black;
+}
+
+.footer1 {
+    position: relative;
+    padding-left: 8px;
+    color: white;
+}
+
+.footer1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px; 
+    width: 0; 
+    background-color: white;
+    transition: width 0.4s ease; 
+    transform-origin: left;
+}
+
+.footer1:hover::before {
+    width: 100%; 
+}
+
+#heroFooter i {
+    cursor : pointer ; 
+}
+
+#heroFooter i .icon-symbol:hover {
+    animation: slideIn 0.3s ease-in;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#second{
+    font-size: 4vw;
+    color: #fff;
+    padding: 200px 25px;
+    height: 100vh;
+    width: 100%;
+    background: black;
+
+}
+
+.elem{
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    padding: 21px 0px;
+    width: 100%;
+    border-top : 2px solid #888;
+}
+
+.elem h1{
+   opacity: .7;
+    font-weight: 400;
+}
+
+.elemlast{
+    border-bottom: 2px solid #888;
+}
+
+.elem p{
+    font-size: 9px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.elem img{
+    display: none;
+    height: 100%;
+    z-index: 999;
+ position: absolute;
+}
+
+
+.elem:hover img {
+    display: block;
+}
+
+.button button{
+    cursor: pointer;
+    font-size: 19px;
+     background: transparent;
+     color: white;
+     border: 2px solid white;
+     border-radius: 45px;
+     padding: 6px 18px;
+     margin: 45px 0px;
+     transition: background 0.3s ease-in;
+}
+
+sup{
+    color: gray;
+}
+
+.button button:hover{
+ background: white;
+ color: black;
+}
+
+#about{
+    justify-content: end;
+    display: flex;
+    -ms-flex-align: end;
+    margin: 400px 100px 300px 100px;
+    background: black;
+
+}
+
+#about img{
+    margin-right: 45px;
+    border-radius: 50%;
+    height: 275px;
+}
+
+#about .info{
+    line-height: 1.5;
+width: 50%;
+}
+
+#about .info p:nth-child(1){
+    color: gray;
+    margin-bottom: 21px;
+}
+#about .info p:nth-child(2){
+    line-height: 1.5;
+
+}
+
+#reminder{
+    margin: 32px 45px;
+    text-transform: uppercase;
+    background: black;
+
+}
+#reminder p:nth-child(1){
+    color: gray;
+}
+#reminder p:nth-child(2){
+    padding: 5px 0px;
+    color: white;
+    font-size: 21px;
+    position: relative;
+}
+
+#reminder p:nth-child(2)::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    transform-origin: left;
+    background: white;
+    transition: width 0.4s ease;
+}
+
+#reminder p:nth-child(2):hover::before{
+    width: 35%; 
+}
+
+#reminder p:nth-child(2) i{
+    padding: 0px 21px;
+    transform: rotate(-21deg);
+    transition: transform 0.4s ease;
+}
+
+#reminder p:nth-child(2):hover i{
+    transform: rotate(0deg);
+}
+
+#footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 45px;
+    background: black;
+
+}
+
+.sociallinks{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.sociallinks p {
+    position: relative;
+    padding: 10px 21px;
+}
+
+.sociallinks p::before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    transform-origin: left;
+    background: white;
+    transition: width 0.4s ease;
+}
+
+.sociallinks p:hover::before{
+    width: 100%;
+}
