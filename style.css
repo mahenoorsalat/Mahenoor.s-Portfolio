@@ -9,7 +9,7 @@
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
@@ -122,6 +122,7 @@ body {
 }
 
 #head {
+    margin-bottom: 45px;
     overflow-y: hidden;
     justify-content: end;
     color: white;
@@ -456,6 +457,94 @@ sup {
     width: 100%;
 }
 
+/* Testimonials Container */
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    margin: 200px;
+  }
+  
+  .testimonials {
+    transform: translateY(-94px);
+    position: relative;
+    display: flex;
+    justify-content: end;
+    text-align: justify;
+    align-items: center;
+    gap: 2px;
+}
+  .testimonials2 {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    text-align: justify;
+    align-items: end;
+    gap: 20px;
+    margin-left: 476px;
+    margin-top: 45px;
+}
+  /* Individual Person Card */
+  .person1,
+  .person2  , 
+  .person3{
+    position: relative;
+    overflow: hidden;
+  }
+  .person3 img{
+    width: 25%;
+  }
+  .person1 img,
+  .person2 img {
+    width: 63%;
+    border-radius: 16px;
+  }
+
+  /* Overlay Style */
+  .overlay {
+    width: 63%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px); /* Adds blur effect */
+  }
+
+  .heading {
+    margin-left: 133px;
+    text-align: start;
+    font-size: 170px;
+    color: white;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+  .person1:hover .overlay,
+  .person2:hover .overlay ,
+  .person3:hover .overlay 
+    {
+    opacity: 1;
+  }
+  
+  .overlay p {
+    font-size: 17px;
+    margin: 10px;
+  }
+  
+  .overlay p img {
+    height: 50px;
+  }
+  
+
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     #heading h1 {
@@ -584,9 +673,90 @@ sup {
         margin-top: 48px;
         color: #ddd;
     }
+    .testimonials{
+        transform: translateY(0px);
+    }
+    .heading{
+        font-size: 84px;
+        margin-left: 0px;
+    }
+    .testimonials2 {
+        align-items: end;
+        justify-content: start;
+        margin-left: 0px;
+    }
+    .testimonials{
+        display: flex;
+        flex-direction: column;
+    }
+    #testimonials {
+        margin: auto;
+        width: 83%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .overlay p {
+        font-size: 17px;
+        margin: 10px;
+    }
+    .testimonials .person2 {
+        justify-content: end;
+        display: inline-flex;
+    }
+    .testimonials .person2 .overlay {
+        display: inline-flex;
+        margin-left: 229px;
+    }
 }
 
 @media (max-width: 480px) {
+    .overlay{
+        width: 79%;
+    }
+    .person1 img, .person2 img {
+        width: 79%;
+        border-radius: 16px;
+    }
+    .testimonials .person2 .overlay {
+        display: inline-flex;
+        margin-left: 110px;
+    }
+    .testimonials .person2 {
+        justify-content: end;
+        display: inline-flex;
+    }
+    .overlay p {
+        font-size: 10px;
+        margin: 10px;
+    }
+    #head{
+        font-size: 2.5vw;
+    }
+
+    #testimonials {
+        margin: auto;
+        width: 83%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .testimonials{
+        display: flex;
+        flex-direction: column;
+    }
+    .testimonials2 {
+        align-items: end;
+        justify-content: start;
+        margin-left: 0px;
+    }
+    .testimonials{
+        transform: translateY(0px);
+    }
+    .heading{
+        font-size: 84px;
+        margin-left: 0px;
+    }
     #about img {
         margin-right: 0px;
         margin-bottom: 20px;
