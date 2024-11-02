@@ -257,7 +257,12 @@ body {
     color: #ddd;
 }
 
-.service-card img {
+.service-number img{
+    background: white;
+    border-radius: 50%;
+    width: 45%;
+}
+.service-card>img {
     scale : 0 ;
     display: none;
     position: absolute;
@@ -356,7 +361,7 @@ sup {
 #about {
     justify-content: end;
     display: flex;
-    margin: 400px 100px 300px 100px;
+    margin: 800px 100px 300px 100px;
     background: black;
 }
 
@@ -527,6 +532,17 @@ sup {
     font-weight: 600;
 }
 
+#second a { 
+    color: white;
+    text-decoration: none;
+
+}
+
+.sociallinks p a{
+    color: white;
+    text-decoration: none;
+}
+
   .person1:hover .overlay,
   .person2:hover .overlay ,
   .person3:hover .overlay 
@@ -676,8 +692,9 @@ sup {
     .testimonials{
         transform: translateY(0px);
     }
-    .heading{
-        font-size: 84px;
+    .heading {
+        text-align: center;
+        font-size: 18.5vw;
         margin-left: 0px;
     }
     .testimonials2 {
@@ -708,9 +725,19 @@ sup {
         display: inline-flex;
         margin-left: 229px;
     }
+    #reminder {
+        margin: 32px 0px;
+        text-transform: uppercase;
+        background: black;
+    }
 }
 
 @media (max-width: 480px) {
+    #reminder {
+        margin: 32px 0px;
+        text-transform: uppercase;
+        background: black;
+    }
     .overlay{
         width: 79%;
     }
