@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +19,13 @@ body {
     color: white;
 }
 
+#preloader{
+    background: #000 url(loading.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
 #mini-circle {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
     width: 20px;
@@ -361,7 +369,7 @@ sup {
 #about {
     justify-content: end;
     display: flex;
-    margin: 800px 100px 300px 100px;
+    margin: 1200px 100px 300px 100px;
     background: black;
 }
 
@@ -600,7 +608,7 @@ sup {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 768px) {
     #about img {
         margin-right: 0px;
         margin-bottom: 20px;
@@ -739,22 +747,21 @@ sup {
         background: black;
     }
     .overlay{
-        width: 79%;
-    }
+        width: fit-content;
+        }
     .person1 img, .person2 img {
         width: 79%;
         border-radius: 16px;
     }
     .testimonials .person2 .overlay {
         display: inline-flex;
-        margin-left: 110px;
     }
     .testimonials .person2 {
         justify-content: end;
         display: inline-flex;
     }
     .overlay p {
-        font-size: 10px;
+        font-size: 9px;
         margin: 10px;
     }
     #head{

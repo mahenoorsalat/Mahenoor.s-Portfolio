@@ -1,6 +1,7 @@
 const NewDate = document.querySelector(".date span");
 const cursor = document.querySelector("#mini-circle");
 const ELEM = document.querySelectorAll(".elem");
+const loading = document.querySelector("#preloader");
 
 NewDate.innerHTML = new Date().getFullYear();
 
@@ -100,6 +101,8 @@ ELEM.forEach(function(elem){
 
 
 
-
+window.addEventListener("load" , function(){
+    loading.style.display = "none";
+})
 
 window.addEventListener('load', firstPageAnimation);
