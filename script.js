@@ -2,10 +2,11 @@ const NewDate = document.querySelector(".date span");
 const cursor = document.querySelector("#mini-circle");
 const ELEM = document.querySelectorAll(".elem");
 const loading = document.querySelector("#preloader");
+const serviceCards = document.querySelectorAll('.service-card');
 
 NewDate.innerHTML = new Date().getFullYear();
 
-// Custom cursor tracking
+
 function cursorMaker(xscale = 1, yscale = 1) {
     window.addEventListener("mousemove", function (event) {
         gsap.to(cursor, {
@@ -18,7 +19,7 @@ function cursorMaker(xscale = 1, yscale = 1) {
     });
 }
 
-cursorMaker(); // Initialize cursor tracking
+
 
 
 // Animation for first page load
@@ -54,6 +55,45 @@ function firstPageAnimation() {
     tl.from("#heroFooter", {
         opacity: 0,
     });
+
+    // Initialize service cards animation
+   
+}
+
+function setupServiceCards() {
+    serviceCards.forEach((card, index) => {
+        gsap.from(card, {
+            opacity: 0,
+            y: 50,
+            scale:0,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 100%",
+                end: "top 100%",
+                toggleActions: "play none none reverse",
+                
+            }
+        });
+
+        // Add hover animation
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                y: -10,
+                duration: 1.5,
+                ease: "power2.out"
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                y: 0,
+                duration: 1.5,
+                ease: "power2.out"
+            });
+        });
+    });
 }
 
 // Interactions with specific elements
@@ -76,10 +116,29 @@ ELEM.forEach(function (elem) {
     });
 });
 
-// Preloader
-window.addEventListener("load", function () {
-    loading.style.display = "none";
-});
+// Initialization function
+function init() {
+    // Initialize cursor
+    cursorMaker();
+    
+    // Hide preloader
+    gsap.to(loading, {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => {
+            loading.style.display = "none";
+        }
+    });
 
-// First-page animation trigger
-window.addEventListener("load", firstPageAnimation);
+    // Start first page animation
+    firstPageAnimation();
+    setupServiceCards();
+}
+
+// Start everything on load
+window.addEventListener("load", init);
+
+// Handle resize events
+window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+});
