@@ -12,7 +12,13 @@ html,
 body {
     height: 100vh;
     width: 100%;
+    scroll-behavior: smooth;
 }
+/* WebKit Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 
 body {
     background: black;
@@ -30,7 +36,7 @@ body {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
     width: 20px;
     height: 20px;
-    position: absolute;
+    position: fixed;
     z-index: 99999;
     border-radius: 50%;
     background: #fff;
@@ -559,14 +565,19 @@ sup {
   }
   
   .overlay p {
-    font-size: 17px;
+    font-size: 13px;
     margin: 10px;
-  }
+}
   
   .overlay p img {
     height: 50px;
   }
   
+  .margin {
+    margin-left: 174px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
 
 /* Responsive Styles */
@@ -582,7 +593,7 @@ sup {
     #about {
         flex-direction: column;
         align-items: center;
-        margin: 200px 20px;
+        margin: 488px 20px;
     }
 
     #about img {
@@ -609,6 +620,12 @@ sup {
 }
 
 @media (min-width: 480px) and (max-width: 768px) {
+
+    .margin {
+        margin-left: 0px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
     #about img {
         margin-right: 0px;
         margin-bottom: 20px;
@@ -741,6 +758,11 @@ sup {
 }
 
 @media (max-width: 480px) {
+    .margin {
+        margin-left: 0px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
     #reminder {
         margin: 32px 0px;
         text-transform: uppercase;
