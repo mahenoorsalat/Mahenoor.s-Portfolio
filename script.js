@@ -19,7 +19,29 @@ function cursorMaker(xscale = 1, yscale = 1) {
     });
 }
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    // Add click event listeners to each card
+    serviceCards.forEach(card => {
+        const header = card.querySelector('.service-header');
+        const details = card.querySelector('.service-details');
+        const toggleIcon = card.querySelector('.toggle-icon');
+        
+        header.addEventListener('click', function() {
+            // Toggle the active class on the details section
+            details.classList.toggle('active');
+            
+            // Change the icon based on state
+            if (details.classList.contains('active')) {
+                toggleIcon.textContent = '-';  // Change to minus when expanded
+            } else {
+                toggleIcon.textContent = '+';  // Change to plus when collapsed
+            }
+        });
+    });
+});
 
 
 // Animation for first page load
